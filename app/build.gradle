@@ -58,7 +58,7 @@ if (project.file('../ActivityDiarySigning.properties').exists()) {
 }
 
 android {
-    compileSdkVersion 32
+    compileSdk 33
     defaultConfig {
         applicationId "de.rampro.activitydiary"
         minSdkVersion 21
