@@ -21,15 +21,22 @@ package de.rampro.activitydiary.ui.generic;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+
 import com.google.android.material.navigation.NavigationView;
+
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
+
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
 
 import de.rampro.activitydiary.R;
 import de.rampro.activitydiary.ui.history.HistoryActivity;
@@ -42,12 +49,37 @@ import de.rampro.activitydiary.ui.statistics.StatisticsActivity;
  * MainActivity to show most of the UI, based on switching the fragements
  *
  * */
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity implements Callback.CommonCallback<String> {
     protected DrawerLayout mDrawerLayout;
     protected ActionBarDrawerToggle mDrawerToggle;
     protected NavigationView mNavigationView;
 
-@Override
+    public void loadData(String url) {
+        RequestParams params = new RequestParams(url);
+        x.http().get(params, this);
+    }
+
+    @Override
+    public void onSuccess(String result) {
+
+    }
+
+    @Override
+    public void onError(Throwable ex, boolean isOnCallback) {
+
+    }
+
+    @Override
+    public void onCancelled(CancelledException cex) {
+
+    }
+
+    @Override
+    public void onFinished() {
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -78,7 +110,7 @@ public class BaseActivity extends AppCompatActivity {
                 boolean highlight = true;
                 switch (menuItem.getItemId()) {
                     case R.id.nav_main:
-                        if(!menuItem.isChecked()) {
+                        if (!menuItem.isChecked()) {
                             // start activity only if it is not currently checked
                             Intent intentmain = new Intent(BaseActivity.this, MainActivity.class);
                             intentmain.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -118,6 +150,11 @@ public class BaseActivity extends AppCompatActivity {
                         Intent intentsettings = new Intent(BaseActivity.this, SettingsActivity.class);
                         startActivity(intentsettings);
                         break;
+
+                    case R.id.nav_activity_history_today:
+                        Intent intenthistory = new Intent(BaseActivity.this, HistoryTodayActivity.class);
+                        startActivity(intenthistory);
+                        break;
                     default:
                         Toast.makeText(BaseActivity.this, menuItem.getTitle() + " is not yet implemented :-(", Toast.LENGTH_LONG).show();
                         break;
@@ -147,15 +184,15 @@ public class BaseActivity extends AppCompatActivity {
         // true, then it has handled the app icon touch event
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
-        }else if(item.getItemId() == android.R.id.home){
+        } else if (item.getItemId() == android.R.id.home) {
             finish();
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    protected void setContent(View contentView){
-        FrameLayout content = ((FrameLayout)findViewById(R.id.content_fragment));
+    protected void setContent(View contentView) {
+        FrameLayout content = ((FrameLayout) findViewById(R.id.content_fragment));
         content.removeAllViews();
         content.addView(contentView);
     }

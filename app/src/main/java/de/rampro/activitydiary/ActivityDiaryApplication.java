@@ -27,6 +27,7 @@ import org.acra.ACRA;
 import org.acra.ReportField;
 import org.acra.config.*;
 import org.acra.data.StringFormat;
+import org.xutils.x;
 
 import de.rampro.activitydiary.helpers.GraphicsHelper;
 
@@ -36,6 +37,7 @@ public class ActivityDiaryApplication extends Application {
 
     public void onCreate() {
         super.onCreate();
+        x.Ext.init(this);
         ActivityDiaryApplication.context = getApplicationContext();
 
         /* now do some init stuff */
