@@ -1,5 +1,9 @@
 新增功能：历史上的今天
 
+该功能入口设置在侧边栏
+
+![6c41bfe79d3968c89ac411c239d0de4](https://github.com/Drifterpc/se_course_project_2/assets/140794349/55be447d-0ea0-4a4e-978b-4aae5734f42c)
+
 1、用户可以查看当天的老黄历信息
 
 ![image](https://github.com/Drifterpc/se_course_project_2/assets/140794349/dd4eaa1b-33d9-456c-8c3c-17781d39672e)
