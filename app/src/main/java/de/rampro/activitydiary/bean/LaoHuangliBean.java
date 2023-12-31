@@ -3,12 +3,6 @@ package de.rampro.activitydiary.bean;
 public class LaoHuangliBean {
 
 
-    /**
-     * reason : successed
-     * result : {"id":"3494","yangli":"2019-11-14","yinli":"己亥(猪)年十月十八","wuxing":"大溪水 定执位","chongsha":"冲鸡(己酉)煞西","baiji":"乙不栽植千株不长 卯不穿井水泉不香","jishen":"时德 天德 月德 四相 阴德 民日 三合 时阴 鸣犬","yi":"订盟 纳采 纳财 开市 立券 祭祀 祈福 移徙 入宅 出行 盖屋 起基 修造 动土 竖柱 上梁 安门 安香 出火 教牛马 会亲友 破土","xiongshen":"元武","ji":"嫁娶 安葬 掘井 置产 造船"}
-     * error_code : 0
-     */
-
     private String reason;
     private ResultBean result;
     private int error_code;
@@ -38,18 +32,6 @@ public class LaoHuangliBean {
     }
 
     public static class ResultBean {
-        /**
-         * id : 3494
-         * yangli : 2019-11-14
-         * yinli : 己亥(猪)年十月十八
-         * wuxing : 大溪水 定执位
-         * chongsha : 冲鸡(己酉)煞西
-         * baiji : 乙不栽植千株不长 卯不穿井水泉不香
-         * jishen : 时德 天德 月德 四相 阴德 民日 三合 时阴 鸣犬
-         * yi : 订盟 纳采 纳财 开市 立券 祭祀 祈福 移徙 入宅 出行 盖屋 起基 修造 动土 竖柱 上梁 安门 安香 出火 教牛马 会亲友 破土
-         * xiongshen : 元武
-         * ji : 嫁娶 安葬 掘井 置产 造船
-         */
 
         private String id;
         private String yangli;
