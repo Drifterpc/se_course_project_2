@@ -18,7 +18,7 @@ public class ContentURL {
 
     //    根据指定事件id获取指定事件详情信息
     public static String getHistoryDescURL(String version, String id) {
-        String url = "http://api.juheapi.com/japi/tohdet?key=ed068c28d5db85cb0e6d9e519560a48c&v=" + version + "&id=" + id;
+        String url = "http://api.juheapi.com/japi/tohdet?v=" + version + "&id=" + id + "&key=f609357dcaf5343914f6e99b32fee521";
         return url;
     }
 }
