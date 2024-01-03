@@ -4,13 +4,13 @@ public class ContentURL {
 
     //    获取指定日期对应的历史上的今天的网址
     public static String getTodayHistoryURL(String version, int month, int day) {
-        String url = "http://api.juheapi.com/japi/toh?v=" + version + "&month=" + month + "&day=" + day + "&key=ed068c28d5db85cb0e6d9e519560a48c";
+        String url = "http://api.juheapi.com/japi/toh?v=" + version + "&month=" + month + "&day=" + day + "&key=f609357dcaf5343914f6e99b32fee521";
         return url;
     }
 
     //    获取指定日期的老黄历的网址
     public static String getLaohuangliURL(String time) {
-        String url = "http://v.juhe.cn/laohuangli/d?date=" + time + "&key=91a19dc709c7da5a46b7adea5e0ae62d";
+        String url = "http://v.juhe.cn/laohuangli/d?date=" + time + "&key=64e277ceac34baab6c5d3e1a7168ac39";
         return url;
     }
 
