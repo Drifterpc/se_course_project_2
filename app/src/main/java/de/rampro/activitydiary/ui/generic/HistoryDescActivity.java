@@ -61,14 +61,14 @@ public class HistoryDescActivity extends BaseActivity implements View.OnClickLis
         if (v.getId() == R.id.desc_back_iv) {
             finish();
         } else if (v.getId() == R.id.desc_share_iv) {
-            String text = "我发现一款好用的软件-历史上的今天，快来一起探索这个APP吧！";
+            String text = "我发现一款好用的软件-ActivityDiary，快来一起探索这个APP吧！";
             if (resultBean != null) {
-                text = "想要了解" + resultBean.getTitle() + "详情么？快来下载历史上的今天App吧！";
+                text = "想要了解" + resultBean.getTitle() + "详情么？快来下载ActivityDiaryApp吧！";
             }
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
             intent.putExtra(Intent.EXTRA_TEXT, text);
-            startActivity(Intent.createChooser(intent, "历史上的今天"));
+            startActivity(Intent.createChooser(intent, "ActivityDiary"));
         }
     }
 }
